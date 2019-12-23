@@ -3,7 +3,7 @@ import axios from 'axios';
 const headers = {};
 
 const instance = axios.create({
-  baseURL: `http://pokeapi.co/api/v1/`,
+  baseURL: `https://pokeapi.co/api/v2/`,
 });
 
 export default instance;

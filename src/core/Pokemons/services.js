@@ -1,3 +1,3 @@
-import axios from 'axios';
+import axios from '../axios.instance';
 
-export const getPokemonsApi = async () => await axios.get('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20');
+export const getPokemonsApi = () => axios.get('pokemon?offset=20&limit=20');
