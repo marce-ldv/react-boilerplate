@@ -1,10 +1,10 @@
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers';
 import rootSaga from './sagas.root';
 import { applyMiddleware, createStore } from 'redux';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 const saga = createSagaMiddleware();
 

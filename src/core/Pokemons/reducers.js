@@ -1,4 +1,4 @@
-import { GET_POKEMON_LIST } from '../constants';
+import { SET_POKEMON_LIST } from '../constants';
 
 const initialState = {
   pokemons: [],
@@ -6,7 +6,7 @@ const initialState = {
 
 export const pokemonReducer = (state = initialState, { payload, type }) => {
   switch (type) {
-    case GET_POKEMON_LIST:
+    case SET_POKEMON_LIST:
       return {
         ...state,
         pokemons: payload,

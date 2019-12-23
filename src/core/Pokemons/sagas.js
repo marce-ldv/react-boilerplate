@@ -4,8 +4,8 @@ import { setPokemonList } from './actions';
 
 export function* getPokemonListSagas() {
   try {
-    const data = yield call(getPokemonsApi);
-    yield put(setPokemonList(data));
+    const { data } = yield call(getPokemonsApi);
+    yield put(setPokemonList(data.results));
   } catch (e) {
     console.error(e);
   }

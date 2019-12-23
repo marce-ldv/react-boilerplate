@@ -11,10 +11,11 @@ const Pokemons = () => {
   }, [dispatch]);
 
   const pokemons = useSelector(state => getPokemonsSelector(state));
+  console.log(pokemons)
 
   return (
     <>
-      <div>Pokemons: {pokemons}</div>
+      <div>Pokemons:</div>
     </>
   );
 };
