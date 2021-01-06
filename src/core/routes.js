@@ -4,7 +4,12 @@ import Pokemons from 'containers/Pokemons';
 
 export const routes = [
   {
-    path: '/pokemon-list',
+    exact: true,
+    path: '/',
+    component: () => <Pokemons />,
+  },
+  {
+    path: '/pokemons',
     component: () => <Pokemons />,
   },
 ];
