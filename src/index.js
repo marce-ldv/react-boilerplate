@@ -1,20 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from 'components/App/App';
+import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { store } from 'core/store';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import PublicRoute from 'components/Layout';
+import { routes } from './core/routes';
+import { createBrowserHistory } from 'history';
+import './index.css';
+import './normalize.css';
+
+export const history = createBrowserHistory();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <Switch>
+        {routes?.map((route, k) => (
+          <PublicRoute path={route.path} component={route.component} key={k} exact={!!route.exact} />
+        ))}
+      </Switch>
+    </Router>
   </Provider>,
 
   document.getElementById('root'),
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// Activate the basic PWA, we need edit the service worker to manage the progressive web application, like push notifications
+// You can see the google developers documentation to do this
+serviceWorker.register();

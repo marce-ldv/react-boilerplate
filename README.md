@@ -22,13 +22,24 @@ https://yarnpkg.com/en/docs/install
 
 * Clone this proyect with git clone
 ```
-git clone https://github.com/marcelo-docutec/react-boilerplate
+git clone https://github.com/marce-ldv/react-boilerplate
 ```
 * Run these commands
 ```
 yarn install or only yarn
 yarn start
 ```
+
+## How to run tests
+* Run these command
+```
+yarn test
+```
+* Or you can run this command in the project root
+```
+./node_modules/jest/bin/jest.js src/containers/Pokemons/
+```
+
 ### Enjoy !!!
 
 ---
@@ -37,16 +48,18 @@ yarn start
 
 ```
 axios
-enzyme
 history
 jest
+i18next
 prettier
 react-redux
 react-router
 react-router-dom
+react-testing-library
 redux-saga
 redux
 reselect
+yup
 ```
 
 ##### For more technologies you can see the package.json in the source module

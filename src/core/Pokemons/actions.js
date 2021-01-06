@@ -1,10 +1,15 @@
-import { GET_POKEMON_LIST, SET_POKEMON_LIST } from 'core/constants';
+import * as actionTypes from 'core/actionTypes';
 
-export const getPokemonList = () => ({
-  type: GET_POKEMON_LIST,
+export const getPokemonListRequest = () => ({
+  type: actionTypes.GET_POKEMON_LIST_REQUEST,
 });
 
-export const setPokemonList = payload => ({
-  type: SET_POKEMON_LIST,
+export const getPokemonListSuccess = payload => ({
+  type: actionTypes.GET_POKEMON_LIST_SUCCESS,
+  payload,
+});
+
+export const getPokemonListFailure = payload => ({
+  type: actionTypes.GET_POKEMON_LIST_FAILURE,
   payload,
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactTable from 'react-table';
+import PropTypes from 'prop-types';
 import 'react-table/react-table.css';
 
 const Table = ({ columns, data, handleClick, isPagination, defaultPageSize }) => {
@@ -11,7 +12,7 @@ const Table = ({ columns, data, handleClick, isPagination, defaultPageSize }) =>
       className="-striped -highlight"
       getTdProps={(state, rowInfo) => {
         return {
-          onClick: e => rowInfo && handleClick && handleClick(rowInfo),
+          onClick: () => handleClick && handleClick(rowInfo),
           style: {
             textAlign: 'center',
             cursor: 'pointer',
@@ -25,3 +26,11 @@ const Table = ({ columns, data, handleClick, isPagination, defaultPageSize }) =>
 };
 
 export default Table;
+
+Table.propTypes = {
+  columns: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
+  handleClick: PropTypes.func,
+  isPagination: PropTypes.bool,
+  defaultPageSize: PropTypes.number,
+};
