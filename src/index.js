@@ -9,6 +9,7 @@ import { routes } from './core/routes';
 import { createBrowserHistory } from 'history';
 import './index.css';
 import './normalize.css';
+import './i18n';
 
 export const history = createBrowserHistory();
 
