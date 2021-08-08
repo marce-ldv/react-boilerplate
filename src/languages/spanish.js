@@ -4,7 +4,7 @@ export default {
     common: {
       table: 'Tabla',
       list: 'Lista',
-      products: 'Products',
+      products: 'Productos',
     },
   },
 };
