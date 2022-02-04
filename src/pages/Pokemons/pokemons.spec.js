@@ -18,16 +18,16 @@ describe('<Pokemons />', () => {
     );
   });
 
-  // test('should render Spinner in Pokemons', () => {
-  //   const history = createMemoryHistory();
-  //   let wrapper = render(
-  //     <Provider store={store}>
-  //       <Router history={history}>
-  //         <Pokemons />
-  //       </Router>
-  //     </Provider>,
-  //   );
-  //   const spinner = wrapper.findByRole('progressbar');
-  //   expect(screen.findByRole('progressbar')).toEqual(spinner);
-  // });
+  test('should render Spinner in Pokemons', () => {
+    const history = createMemoryHistory();
+    let wrapper = render(
+      <Provider store={store}>
+        <Router history={history}>
+          <Pokemons />
+        </Router>
+      </Provider>,
+    );
+    const spinner = wrapper.findByRole('progressbar');
+    expect(screen.findByRole('progressbar')).toEqual(spinner);
+  });
 });

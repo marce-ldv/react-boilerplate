@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 const headers = {};
+const baseURL = `${process.env.REACT_APP_API_URL}`;
 
 const instance = axios.create({
-  baseURL: `https://pokeapi.co/api/v2/`,
+  baseURL,
   headers,
 });
 

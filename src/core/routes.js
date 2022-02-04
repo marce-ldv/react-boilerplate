@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-import Pokemons from 'containers/Pokemons';
+import Pokemons from 'pages/Pokemons';
 
 export const routes = [
   {

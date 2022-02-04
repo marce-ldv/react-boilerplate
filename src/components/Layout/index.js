@@ -3,14 +3,7 @@ import { Route } from 'react-router-dom';
 import { func } from 'prop-types';
 
 const PublicRoute = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={matchProps => (
-        <Component {...matchProps} />
-      )}
-    />
-  );
+  return <Route {...rest} render={matchProps => <Component {...matchProps} />} />;
 };
 
 PublicRoute.propTypes = {
