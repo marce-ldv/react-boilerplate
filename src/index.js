@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { store } from 'core/store';
+import store from 'core/store';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PublicRoute from 'components/Layout';
 import { routes } from './core/routes';

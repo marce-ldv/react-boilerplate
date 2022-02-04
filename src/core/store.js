@@ -1,16 +1,7 @@
-import { createBrowserHistory } from 'history';
-import createSagaMiddleware from 'redux-saga';
-import rootReducer from './reducers';
-import rootSaga from './saga.root';
-import { applyMiddleware, createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './rootReducer';
 
-export const history = createBrowserHistory();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const saga = createSagaMiddleware();
-
-const middlewares = [saga];
-
-export const store = createStore(rootReducer(), applyMiddleware(...middlewares));
-
-store.runSaga = saga.run;
-store.runSaga(rootSaga);
+export default createStore(reducers, composeEnhancers(applyMiddleware(thunk)));

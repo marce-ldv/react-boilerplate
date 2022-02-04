@@ -56,7 +56,7 @@ react-redux
 react-router
 react-router-dom
 react-testing-library
-redux-saga
+redux-thunks
 redux
 reselect
 yup

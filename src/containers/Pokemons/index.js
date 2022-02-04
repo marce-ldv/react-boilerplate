@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Table from 'components/Table';
 import { pokeColumns } from './columns';
-import { getPokemonListRequest } from 'core/Pokemons/actions';
+import { getPokemonList } from 'core/Pokemons/thunks';
 import { getPokemonsSelector } from 'core/Pokemons/selectors';
 import { useTranslation } from 'react-i18next';
 
@@ -12,7 +12,7 @@ const Pokemons = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    dispatch(getPokemonListRequest());
+    dispatch(getPokemonList());
   }, [dispatch]);
 
   return (
